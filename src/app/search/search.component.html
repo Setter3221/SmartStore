@@ -1,0 +1,36 @@
+
+  
+  <div class="container-fluid mt-3">
+      <div class="row">
+      
+       
+              <div class="col-md-3  mt-2" style="padding:3%;" *ngFor="let product of productList">
+                  <div class="card" style="border:1px solid #67AD7E;">
+                       <a href="">
+                          <img class="card-img-top" [src]="product.image_Url" alt="product.productName">
+                      </a>
+                      <div class="card-body">
+                          <h5 class="card-title">
+                              
+                              <a class="link-secondary" style="text-decoration:none;"  href="">
+                                {{product.productName}}  
+                              </a>
+                             
+                          </h5>
+                          <strong>Rs. {{product.price}}  </strong>
+  
+                          <!-- <p class="card-t">
+                              
+                          </p> -->
+                          <p class="card-text">
+                              <a [routerLink]="['/product-details',product.productId]" class="btn btn-outline-success" id="btns">
+                              &nbsp;&nbsp;View&nbsp;&nbsp;
+                              </a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+         
+      </div>
+  </div>
+

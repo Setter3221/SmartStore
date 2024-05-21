@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center align-items-center m-5" style="min-height: 70vh;">
+    <form class="shadow p-4" [formGroup]="registerForm"  (ngSubmit)="onRegister()">
+
+      <h1 class="h3 mb-3 fw-normal">Please sign Up</h1>
+  
+      <div class="form-floating" >
+        <div class="bg-light text-danger"*ngIf="registerForm.controls['Name'].invalid && registerForm.controls['Name'].touched">
+          Name is required.
+        </div>
+        <input  formControlName="Name" type="text" name="username" placeholder="UserName" required/>
+        <span class="fas fa-user"></span>
+      </div>
+
+      
+        <!-- <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" name="email"[(ngModel)]="registerObj.Email" placeholder="E-mail" />
+          <label for="floatingInput">Email address</label>
+        </div> -->
+
+        <div class="form-floating  ">
+          <div class="bg-light text-danger" *ngIf="registerForm.controls['Email'].invalid && registerForm.controls['Email'].touched">
+            Valid email is required.
+          </div>
+          <input  formControlName="Email" type="text" name="email" placeholder="E-mail" required />
+           <span class="fas fa-lock"></span>
+        </div>
+
+
+
+        <div class="form-floating ">
+         
+          <div class="bg-light text-danger" *ngIf="registerForm.controls['Password'].invalid && registerForm.controls['Password'].touched">
+            Password must be at least 8 characters long.
+          </div>
+          <input  formControlName="Password" type="password" name="password" placeholder="Password" />
+           <span class="fas fa-lock"></span>
+        </div>
+<!-- 
+      <div class="form-floating ">
+        <input type="password" class="form-control" id="floatingPassword"  name="password"[(ngModel)]="registerObj.Password" placeholder="Password" />
+        <label for="floatingPassword">Password</label>
+      </div> -->
+
+
+
+      <div class="form-floating  ">
+        <div class="bg-light text-danger" *ngIf="registerForm.controls['ConfirmPassword'].invalid && registerForm.controls['ConfirmPassword'].touched">
+          Confirm Password must match the password.
+        </div>
+        <input formControlName="ConfirmPassword" type="password" name="password2" placeholder="Confirm password" />
+        <span class="fas fa-lock"></span>
+      </div>
+        
+
+
+      <div class="form-floating">
+        <div class="bg-light text-danger" *ngIf="registerForm.controls['PhoneNumber'].invalid && registerForm.controls['PhoneNumber'].touched">
+          Valid mobile number is required.
+        </div>
+        <input  formControlName="PhoneNumber" type="text" name="phoneNumber"  placeholder="Mobile" />
+         <span class="fas fa-lock"></span>
+      </div>
+      
+  
+      <div class="form-floating">
+        <div  class="bg-light text-danger" *ngIf="registerForm.controls['Address'].invalid && registerForm.controls['Address'].touched">
+          Address is required.
+        </div>
+        <input  formControlName="Address" type="text" name="address" placeholder="Address" />
+         <span class="fas fa-lock"></span>
+      </div>
+   
+   <!-- <div class="form-floating mt-3" style="cursor: pointer;">
+   <a routerLink="/login"><strong>Login</strong></a>
+</div>  -->
+
+<button class="btn btn-dark text-white w-100 py-3 my-3" type="submit"  [disabled]="!registerForm.valid"><i
+  class="bi bi-check-circle-fill" > Submit</i></button>
+
+</form>
+</div> 

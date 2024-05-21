@@ -1,0 +1,64 @@
+
+<!--            
+           <section class="py-5">
+            <div class="container">
+              <div class="container row gx-5">
+           
+           
+           <div class="container row gx-5" style="padding:3%;" *ngFor="let product of productList">
+                  <div class="card" style="border:1px solid #67AD7E;">
+                       <a href="">
+                          <img class="card-img-top" [src]="product.image_Url" alt="product.productName">
+                      </a> 
+                      <div class="card-body">
+                          <h5 class="card-title">
+                              
+                              <a class="link-secondary" style="text-decoration:none;"  href="">
+                                {{product.productName}}  
+                              </a>
+                             
+                          </h5>
+                          <strong>Rs. {{product.price}}  </strong>
+  
+                      
+                              
+                          
+                          <p class="card-text">
+                              <a [routerLink]="['/product-details',product.productId]" class="btn btn-outline-success" id="btns">
+                              &nbsp;&nbsp;View&nbsp;&nbsp;
+                              </a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+         
+           
+          </div>
+        </div>
+ </section> -->
+
+
+ <div class="container">
+  <div class="row">
+  <div class=" col-4 mb-2 justify-content-center gx-5" *ngFor="let product of productList">
+      <div class="card justify-content-center" style="border:1px solid #67AD7E; max-width: 18rem;">
+          <a class="d-flex justify-content-center" href="">
+              <img class="  img-fluid" [src]="product.image_Url" alt="{{product.productName}}" style="height: auto; max-height: 200px;">
+          </a>
+          <div class="card-body text-center">
+              <h5 class="card-title">
+                  <a class="link-secondary" style="text-decoration:none;" href="">
+                      {{product.productName}}
+                  </a>
+              </h5>
+              <strong>Rs. {{product.price}}</strong>
+              <p class="card-text">
+                  <a [routerLink]="['/product-details',product.productId]" class="btn btn-outline-success" id="btns">
+                    View
+                  </a>
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,98 @@
+  <div class="container-fluid" style="margin:0%;padding:3%;width:100%;height: 75vh;" >
+  <div class="row">
+      <div class="col-md-12">
+          
+          <table class="table text-center" *ngIf="!cartItems.length">
+              <tr>
+                  <td>
+                      <div class="display-4">Your cart is empty</div><br>
+                      <!-- <button type="button" class="btn btn-outline-success" id="btns" onclick="relocate_shop()">Shop now</button> -->
+                  </td>
+              </tr>
+          </table>
+         <div *ngIf="cartItems.length">
+            <table class="table">
+                <thead>
+                     <tr>
+                         <th>Product</th>
+                         <th>Price</th>
+                         <th>Qty</th>
+                         <th>Total</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                    
+                         <tr *ngFor="let item of cartItems">
+                             <td>
+                                 <img [src]="item.productDetails.image_Url" class="rounded img-thumbnail mr-2" style="width:60px;">
+                                 
+                                 <a class="text-success">
+                                     <i class="bi bi-trash-fill">{{item.productDetails.productName}}</i>
+                                 </a>
+                            
+                             </td>
+                             <td>
+                               {{item.unitPrice}}
+                             </td>
+                             <td>
+                                <div class="col">
+                                    <button (click)="onDecrementQuantity(item.productId)" class="quantityBtn">-</button><span class="p-2">{{item.quantity}}</span><button (click)="onIncrementQuantity(item.productId)" class="quantityBtn">+</button>
+                                </div>
+                             </td>
+                             
+                             <td>
+                               {{item.unitPrice*item.quantity}}
+                             </td>
+                         </tr>
+                   
+                     <tr class="border-top border-bottom">
+                         <td><button class="btn btn-danger btn-sm" id="emptyCart" (click)="onEmptyCart()">Clear Cart</button></td>
+                         <td></td>
+                         <td>
+                             <strong>
+                                
+                             </strong>
+                         </td>
+                         <td><strong></strong></td>
+                     </tr> 
+                     
+                 </tbody> 
+             </table>
+             <div class="row">
+                 <div class="col-md-11">
+                     <a >
+                         <button class="btn btn-success btn-lg float-right" (click)="onCheckOut()" >Checkout</button>
+                     </a>
+                 </div>
+             </div>
+         </div>
+          
+          <br><br>
+          <div class="row">
+              <div class="col-md-11 text-center">
+                  <a routerLink="/products">
+                      <button class="btn btn-success btn-lg float-right">Continue shopping...</button>
+                  </a>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  
+
+
+  <!-- <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <br> -->
+  
+  

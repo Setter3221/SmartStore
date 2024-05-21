@@ -1,0 +1,16 @@
+/* Optional: In case you need to add custom styles */
+.card-img-top {
+    height: 15px;
+     /* Makes image responsive */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+.card {
+    /* Centers the card and limits its width */
+    margin: auto;
+}
+
+/* Ensures the card body content is centered */
+.card-body {
+    text-align: center;
+}

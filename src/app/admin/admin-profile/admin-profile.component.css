@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+main {
+
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+ height: 400px;
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: center;
+}
+
+.zigzag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.zigzag-item {
+  margin: 20px;
+  width: 200px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.zigzag-item:hover {
+  transform: scale(1.05);
+}
+
+/* .customer-link {
+  background-image: url('../../../assets/img/group.png');
+} */
+
+/* .product-link {
+  background-image: url('../../../assets/img/digital.png');
+} */
+
+/* .order-link {
+  background-image: url('../../../assets/img/check-out.png');
+} */
+
+.zigzag-item img {
+  width: 40px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.zigzag-item span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.get-info-btn {
+  background-color: #505150;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.get-info-btn:hover {
+  background-color: #1d1e1d;
+}

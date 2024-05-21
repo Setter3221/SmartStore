@@ -1,0 +1,47 @@
+.Headers:hover {
+    color: #aba2fd !important;
+    font-weight: bold;
+  }
+  
+ 
+  nav i:hover{
+    color: #aba2fd !important;
+  }
+  .user{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  i{
+    color: black !important;
+    font-size:20px ;
+  }
+  /* Ensure consistent alignment for all nav items */
+.nav-item {
+    display: flex;
+    align-items: center; /* Align items vertically */
+  }
+  
+  /* Adjust the search box and button alignment */
+  .search-box {
+    height: 40px; /* Adjust height as needed */
+    margin-top: 0; /* Align with other nav items */
+  }
+  
+  .search-btn {
+    height: 40px; /* Match search box height */
+    margin-top: 0; /* Align with other nav items */
+  }
+  
+  /* Additional styles for consistent spacing and alignment */
+  .navbar-nav {
+    align-items: center; /* Align nav items vertically */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 991px) {
+    .search-box,
+    .search-btn {
+      margin-top: 0.5rem; /* Adjust for mobile view */
+    }
+  }
+  

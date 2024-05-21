@@ -1,0 +1,104 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+
+<div class="Header z-3 shadow">
+
+  <div class="upper-nav banner" [routerLink]="['/products']">
+   <a routerLink="/products" class="PicksLink link-light text-decoration-none"></a>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white mt-1 shadow mb-2">
+    <div class="container">
+      <a class="navbar-brand h2 text-dark logo">SmartStore</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link p-2 p-lg-3 text-dark Headers" [routerLink]="['']">Home</a>
+          </li>
+          <!-- <li class="nav-item ">
+            <a class="nav-link p-2 p-lg-3 text-dark Headers" href="#brands">Brands</a>
+          </li> -->
+          <li class="nav-item ">
+            <a class="nav-link p-2 p-lg-3 text-dark Headers" [routerLink]="['products']" routerLinkActive="clicked">Products</a>
+          </li>
+
+          <li class="nav-item "*ngIf="hasCustomerRole()">
+            <a class="nav-link p-2 p-lg-3 text-dark Headers" [routerLink]="['/order-items']" routerLinkActive="clicked">My Orders</a>
+          </li>
+
+         <li>
+            <input type="text" class="search-box mt-1" [(ngModel)]="searchString" placeholder="search product">
+            <button class="search-btn" (click)="searchProducts()">search</button>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto">
+
+
+          <li class="nav-item  p-2"   *ngIf="hasCustomerRole()" >
+            <a class="nav-link text-dark Headers position-relative d-inline" [routerLink]="['/cart']">
+              <i class="bi bi-cart-fill"></i>
+              My cart
+            </a>
+          </li>
+
+
+          
+        <!-- <li class="nav-item " >
+            <a class="nav-link text-dark Headers" [routerLink]="['login']"><i class="bi bi-person-fill"></i>Login</a>
+          </li>
+           -->
+           <li class="nav-item"> 
+            <ng-container *ngIf="authService.isLoggedIn(); else loginLink">
+              
+              <button class="nav-link text-dark Headers" (click)="onLogout()">
+                <i class="bi bi-box-arrow-right"></i>
+                Logout
+              </button>
+            </ng-container>
+            <ng-template #loginLink>
+              <button class="nav-link text-dark Headers" (click)="onLogin()">
+                <i class="bi bi-person-fill"></i>
+                Login
+              </button>
+            </ng-template>
+          </li>
+
+
+
+
+
+
+
+
+          <!-- Logged Name -->
+          <!-- <li class="nav-item m-1 d-flex" [routerLink]="['profile']" *ngIf=" (log.IsLoggedIn | async)" >
+            <a class="nav-link text-dark Headers"><i class="fa-solid fa-xl fa-right-from-bracket"><img
+                  src="assets/Images/profilepic.png" class="img" style="width: 4VH; border-radius: 50%;" alt="">
+                {{this.log.CurrentUserName | async}}</i></a>
+          </li> -->
+
+          <!-- Logged Name -->
+          <!-- <li class="nav-item m-1 d-flex" *ngIf=" (log.IsLoggedIn | async)">
+            <a class="nav-link text-dark Headers"><i class="bi bi-box-arrow-left" (click)="logout()"> Logout</i></a>
+          </li> -->
+
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+</div>
+

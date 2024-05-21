@@ -1,0 +1,49 @@
+
+<div class="row">
+    <div>
+        <div class="card">
+            <div class="card-header bg-Dark">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Orders</h3>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+       
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <!-- <th scope="col">Id</th> -->
+                    <th scope="col">Sl.no</th>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">User Id</th>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of ordersList | keyvalue; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{order.key}}</td>
+                    <!-- <td>{{order[0].userId}}</td> -->
+                    <!-- <td>{{order.orders[0].userId}}</td> -->
+                    <td>{{ order.value.orders[0].userId }}</td>
+                    <!-- <td>
+                        <ul>
+                            <li *ngFor="let product of order.value.orders">{{ product.productId }}</li>
+                        </ul>
+                    </td> -->
+                    <td>{{ getProductIds(order.value) }}</td>
+                    <td>{{order.value.total}}
+                    </td>
+           
+                  </tr>
+               
+            </tbody>
+        </table>
+    </div>
+ 
+</div>
+ 

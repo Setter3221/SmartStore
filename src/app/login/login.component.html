@@ -1,0 +1,14 @@
+<br>
+
+
+<div class="login-card"><img class="profile-img-card" src="assets/img/Login.png" />
+    <p class="profile-name-card"></p>
+    <form  class="form-signin"><span class="reauth-email"></span>
+        <input type="text" class="form-control" name="userName" [(ngModel)]="loginObj.email" placeholder="Email / Username" required />
+        <input type="password"name="password"class="form-control"  [(ngModel)]="loginObj.password" placeholder="Password" required />
+        <button class="btn btn-primary btn-block btn-lg btn-signin" (click)="onLogin()" >Sign in</button>
+        <a class="forgot-password" [routerLink]="['/register']">Register Here!</a>
+    </form>
+   
+</div>
+

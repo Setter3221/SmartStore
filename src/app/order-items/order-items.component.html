@@ -1,0 +1,63 @@
+<div class="d-flex align-items-center justify-content-center" style="margin-left: 10%;margin-top: 40px;height:70%">
+    <ng-container
+        *ngIf="groupedOrders;else noOrders">
+        <div class="col-10 text-center">
+            <div class="col-10 text-center" *ngFor="let item of groupedOrders | keyvalue">
+                <!-- <h6 (click)="showOrderDetails(item.key)" class="order-id">Order Id : {{item.key}}</h6> -->
+                <h6 class="order-id">Order Id : {{item.key}}</h6>
+                <table class="table table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <td>Product Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total Price</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of item.value">
+                            <td>{{order.productName}}</td>
+                            <td>Rs. {{order.price}}</td>
+                            <td>{{order.quantity}}</td>
+                            <td>Rs. {{order.totalAmount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+     
+            </div>
+        </div>
+     
+    </ng-container>
+    </div>
+    <ng-template #noOrders>
+        <h2>No orders Please Shop ....</h2>
+    </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br> <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+   
+    
